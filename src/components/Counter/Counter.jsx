@@ -1,8 +1,9 @@
 import React from "react";
+import {Div} from './counter.styled'
 class Counter extends React.Component{
     render() {
 return(
-    <div>
+    <Div>
         <span>0</span>
         <div>
             <button type="button"onClick={
@@ -12,10 +13,10 @@ return(
             }>Увеличить на 1</button>
             <button type="button">Уменьшить на 1</button>
         </div>
-    </div>
+    </Div>
 )
     }
 }
 
 
-export default Counter
+export default Counter;
