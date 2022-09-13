@@ -1,22 +1,35 @@
 import React from "react";
-import {Div} from './counter.styled'
-class Counter extends React.Component{
-    render() {
-return(
-    <Div>
-        <span>0</span>
-        <div>
-            <button type="button"onClick={
-                ()=>{
-                    console.log("Клик увеличить")
-                }
-            }>Увеличить на 1</button>
-            <button type="button">Уменьшить на 1</button>
-        </div>
-    </Div>
-)
-    }
+import { Div } from "./Counter.styled";
+import { Controls } from "./Controls";
+
+export class Counter extends React.Component {
+  static defaultProps = {
+    initialValue: 0,
+  };
+
+  state = {
+    value: this.props.initialValue,
+  };
+
+  handleIncrement = () => {
+    this.setState((prevState) => ({
+      value: prevState.value + 1,
+    }));
+  };
+  handleDecrement = () => {
+    this.setState((prevState) => ({
+      value: prevState.value - 1,
+    }));
+  };
+  render() {
+    return (
+      <Div>
+         <span>{this.state.value}</span>
+        <Controls
+          onIncrement={this.handleIncrement}
+          onDecrement={this.handleDecrement}
+        />
+      </Div>
+    );
+  }
 }
-
-
-export default Counter;
