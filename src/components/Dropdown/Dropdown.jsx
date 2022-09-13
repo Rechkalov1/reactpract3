@@ -1,14 +1,26 @@
 import React, { Component } from "react";
-import css from './Dropdown.module'
+import { Drop,DropdownMenu } from "./Drop.styled";
 export class Dropdown extends Component {
-  render() {
+  state ={
+    visible: false,
+  }
+  toggle =()=>{
+    this.setState(prevState =>({
+        visible : !prevState.visible,
+    }))
+  }
+ 
+    render() {
     return (
-      <div className={css.Dropdown}>
-        <button type="button" className="Dropdown__toggle">
-          Показать
+      <Drop>
+        <button type="button" className="Dropdown__toggle" onClick={this.toggle}>
+         {this.state.visible ? "Скрыть" : "Показать"}
         </button>
-        <div className="Dropdown__menu">Выпадающее меню</div>
-      </div>
+        
+        {this.state.visible &&( <DropdownMenu >Выпадающее меню</DropdownMenu>
+        )}
+       
+      </Drop>
     );
   }
 }

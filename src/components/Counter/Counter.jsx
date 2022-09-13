@@ -1,5 +1,5 @@
 import React from "react";
-import { Div } from "./Counter.styled";
+import { Div ,CounterSpan} from "./Counter.styled";
 import { Controls } from "./Controls";
 
 export class Counter extends React.Component {
@@ -24,7 +24,7 @@ export class Counter extends React.Component {
   render() {
     return (
       <Div>
-         <span>{this.state.value}</span>
+         <CounterSpan>{this.state.value}</CounterSpan>
         <Controls
           onIncrement={this.handleIncrement}
           onDecrement={this.handleDecrement}
