@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleButton } from ".Counter.styled";
+import { StyleButton } from "./Counter.styled";
 export const Controls = ({ onIncrement, onDecrement }) => (
   <div>
     <StyleButton type="button" onClick={onIncrement}>

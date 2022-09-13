@@ -1,5 +1,5 @@
 import React from "react";
-import { Div ,CounterSpan} from ".Counter.styled";
+import { Div ,CounterSpan} from "./Counter.styled";
 import { Controls } from "./Controls";
 
 export class Counter extends React.Component {
